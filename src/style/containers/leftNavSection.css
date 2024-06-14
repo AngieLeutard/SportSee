@@ -1,10 +1,9 @@
-.section_wrapper {
+.left_section_wrapper {
     display: flex;
     flex-direction: column;
     justify-content: center;
     background-color: #020203;
     width: 8%;
-    height: 933px;
 }
 
 .leftNav {

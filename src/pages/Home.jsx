@@ -9,7 +9,7 @@ function Home() {
             {/* <section className='leftNavSection_wrapper'>
                 <leftNavSection />
             </section> */}
-            <div className='section_wrapper'>
+            <section className='left_section_wrapper'>
                 <nav className='leftNav'>
                     <a className='nav_link' href="#">
                         <img src={ require('../assets/yoga.png') } alt="navIcon" className="navIcon" />
@@ -24,7 +24,22 @@ function Home() {
                         <img src={ require('../assets/workout.png') } alt="navIcon" className="navIcon" />
                     </a>
                 </nav>
-        </div>
+            </section>
+            <div className='right_section_wrapper'>
+                <section className='welcome_section'>
+                    <h1>Bienvenue Thomas</h1>
+                    <p className='welcome_section_text'>Félicitations ! Vous avez explosé vos objectifs hier </p>
+                </section>
+                <section className='chart_section_wrapper'>
+                    <div className='chart_wrapper'>
+                        <div className='main_chart'></div>
+                        <div className='other_chart'></div>
+                    </div>
+                    <div className='chart_icon_wrapper'>
+
+                    </div>
+                </section>
+            </div>
         </div>
     );
 }

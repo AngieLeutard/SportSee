@@ -1,0 +1,32 @@
+.home_wrapper {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.right_section_wrapper {
+    margin-top: 68px;
+    margin-left: 109px;
+    margin-bottom: 88px;
+}
+
+.welcome_section_text {
+    margin-bottom: 77px;
+}
+
+.chart_section_wrapper {
+    display: flex;
+    gap: 31px;
+}
+
+.chart_wrapper {
+    width: 835px;
+    height: 613px;
+    background-color: black;
+}
+
+.chart_icon_wrapper {
+    background-color: black;
+    width: 258px;
+    height: 613px;
+}
