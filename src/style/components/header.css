@@ -1,0 +1,24 @@
+.header_wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #020203;
+    padding: 18px 28px 18px 28px;
+}
+
+.header_logo {
+    width: 12%;
+    height: 61px;
+}
+
+.navbar {
+    display: flex;
+    gap: 219px;
+}
+
+.nav_link {
+    font-family: "Roboto";
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+}
