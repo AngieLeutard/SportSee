@@ -12,6 +12,7 @@
 
 .welcome_section_text {
     margin-bottom: 77px;
+    font-size: 18px;
 }
 
 .chart_section_wrapper {
@@ -29,4 +30,12 @@
     background-color: black;
     width: 258px;
     height: 613px;
+}
+
+.welcome_section_title {
+    font-size: 48px;
+}
+
+.red_word {
+    color: red;
 }

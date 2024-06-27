@@ -27,8 +27,8 @@ function Home() {
             </section>
             <div className='right_section_wrapper'>
                 <section className='welcome_section'>
-                    <h1>Bienvenue Thomas</h1>
-                    <p className='welcome_section_text'>Félicitations ! Vous avez explosé vos objectifs hier </p>
+                    <h1 className='welcome_section_title'>Bonjour <span className='red_word'>Thomas</span></h1>
+                    <p className='welcome_section_text'>Félicitations ! Vous avez explosé vos objectifs hier 👏</p>
                 </section>
                 <section className='chart_section_wrapper'>
                     <div className='chart_wrapper'>
