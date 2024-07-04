@@ -8,6 +8,7 @@
     margin-top: 68px;
     margin-left: 109px;
     margin-bottom: 88px;
+    width: 100%;
 }
 
 .welcome_section_text {
@@ -18,17 +19,18 @@
 .chart_section_wrapper {
     display: flex;
     gap: 31px;
+    width: 100%;
 }
 
 .chart_wrapper {
-    width: 835px;
+    width: 68%;
     height: 613px;
     background-color: black;
 }
 
 .chart_icon_wrapper {
     background-color: black;
-    width: 258px;
+    width: 21%;
     height: 613px;
 }
 

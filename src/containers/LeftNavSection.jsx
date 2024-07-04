@@ -1,34 +1,34 @@
 import '../style/containers/leftNavSection.css';
 
-import navIcon from '../components/NavIcon';
+import NavIcon from '../components/NavIcon';
 
-function leftNavSection() {
+function LeftNavSection() {
 
     return(
         <div className='section_wrapper'>
             <nav className='leftNav'>
-                    <a className='nav_link' href="#">
-                        <navIcon 
-                            picture = "yoga.png"
-                        />
-                    </a>
-                    <a className='nav_link' href='#'>
-                        <navIcon 
-                            picture = "pool.png"
-                        />
-                    </a>
-                    <a className='nav_link' href="#">
-                        <navIcon 
-                            picture = "cycling.png"
-                        />                    </a>
-                    <a className='nav_link' href="#">
-                        <navIcon 
-                            picture = "workout.png"
-                        />
-                    </a>
-                </nav>
+                <a className='nav_link' href="/">
+                    <NavIcon 
+                        icon="yoga.png"
+                    />
+                </a>
+                <a className='nav_link' href='/'>
+                    <NavIcon 
+                        icon="pool.png"
+                    />
+                </a>
+                <a className='nav_link' href="/">
+                    <NavIcon 
+                        icon="cycling.png"
+                    />                    </a>
+                <a className='nav_link' href="/">
+                    <NavIcon 
+                        icon="workout.png"
+                    />
+                </a>
+            </nav>
         </div>
     );
 }
 
-export default leftNavSection
+export default LeftNavSection

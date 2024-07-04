@@ -1,15 +1,15 @@
 import '../style/pages/home.css';
 
-import leftNavSection from '../containers/LeftNavSection.jsx';
+import LeftNavSection from '../containers/LeftNavSection.jsx';
 
 function Home() {
 
     return (
         <div className="home_wrapper">
-            {/* <section className='leftNavSection_wrapper'>
-                <leftNavSection />
-            </section> */}
-            <section className='left_section_wrapper'>
+            <section className='leftNavSection_wrapper'>
+                <LeftNavSection />
+            </section>
+            {/* <section className='left_section_wrapper'>
                 <nav className='leftNav'>
                     <a className='nav_link' href="#">
                         <img src={ require('../assets/yoga.png') } alt="navIcon" className="navIcon" />
@@ -24,7 +24,7 @@ function Home() {
                         <img src={ require('../assets/workout.png') } alt="navIcon" className="navIcon" />
                     </a>
                 </nav>
-            </section>
+            </section> */}
             <div className='right_section_wrapper'>
                 <section className='welcome_section'>
                     <h1 className='welcome_section_title'>Bonjour <span className='red_word'>Thomas</span></h1>

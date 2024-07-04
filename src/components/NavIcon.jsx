@@ -1,6 +1,6 @@
 import '../style/components/navIcon.css';
 
-function navIcon({icon}) {
+function NavIcon({icon}) {
 
     return(
         <div className='navIcon_wrapper'>
@@ -9,4 +9,4 @@ function navIcon({icon}) {
     );
 }
 
-export default navIcon
+export default NavIcon
