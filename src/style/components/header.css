@@ -1,15 +1,15 @@
 .header_wrapper {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     background-color: #020203;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     padding: 18px 28px 18px 28px;
+    width: 100%;
 }
 
 .header_logo {
     width: 12%;
-    height: 61px;
+    padding-right: 10%;
 }
 
 .navbar {
@@ -22,4 +22,10 @@
     color: white;
     text-decoration: none;
     font-size: 24px;
+}
+
+@media (max-width: 1025px) {
+    .navbar {
+        gap: 115px;
+    }
 }

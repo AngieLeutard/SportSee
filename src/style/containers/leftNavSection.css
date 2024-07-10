@@ -13,3 +13,10 @@
     height: 316px;
     gap: 20px;
 }
+
+.sectionWrapper {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
