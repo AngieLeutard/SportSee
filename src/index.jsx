@@ -15,7 +15,7 @@ root.render(
     <Router>
       <Header />
       <Routes>
-          <Route path="" element={<Home />} exact />
+          <Route path="/:id" element={<Home />} exact />
         </Routes>
     </Router>
   </React.StrictMode>

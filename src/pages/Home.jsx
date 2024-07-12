@@ -1,8 +1,19 @@
 import '../style/pages/home.css';
-
+import { useParams } from 'react-router-dom';
 import LeftNavSection from '../containers/LeftNavSection.jsx';
+import fetchData from '../utils/fetchData.js';
 
 function Home() {
+
+    const { id } = useParams();
+
+    const data = fetchData(`http://localhost:3000/user/${id}`)
+    .then(data => {
+        console.log('Données récupérées:', data);
+    })
+    .catch(error => {
+        console.error('Erreur lors de la récupération des données:', error);
+    });
 
     return (
         <div className="home_wrapper">
