@@ -1,33 +1,32 @@
 import '../style/pages/home.css';
 
 import { useParams } from 'react-router-dom';
+import { useState } from "react";
+import { useFetch } from "../utils/fetchData.js";
 
 import LeftNavSection from '../containers/LeftNavSection.jsx';
-import fetchData from '../utils/fetchData.js';
+// import fetchData from '../utils/fetchData.js';
 import Card from '../components/Card.jsx';
 
 function Home() {
 
     const { id } = useParams();
 
-    let data2 = fetchData(`http://localhost:3000/user/${id}`)
+    const [url, setUrl] = useState(`http://localhost:3000/user/${id}`);
+    const { data, isPending, error } = useFetch(url);
 
-    .then(data => {
-        console.log(data.data);
-        const userData = data.data;
-        console.log(userData);
-        const userInfos = userData.userInfos;
+    let userData = "";
+    let userInfos = "";
+    let userValues = "";
+
+    if(data) {
+        userData = data.data;
+        userInfos = userData.userInfos;
+        userValues = userData.keyData;
+        console.log(userData)
         console.log(userInfos)
-        console.log(userInfos.firstName)
-        const userValues = userData.keyData;
-        console.log(userValues.calorieCount)
-        return data2
-    })
-    .catch(error => {
-        console.error('Erreur lors de la récupération des données:', error);
-    });
-
-    console.log(data2)
+        console.log(userValues)
+    }
     
     return (
         <div className="home_wrapper">
@@ -36,7 +35,7 @@ function Home() {
             </section>
             <div className='right_section_wrapper'>
                 <section className='welcome_section'>
-                    <h1 className='welcome_section_title'>Bonjour <span className='red_word'>Prénom</span></h1>
+                    <h1 className='welcome_section_title'>Bonjour <span className='red_word'>{ userInfos.firstName }</span></h1>
                     <p className='welcome_section_text'>Félicitations ! Vous avez explosé vos objectifs hier 👏</p>
                 </section>
                 <section className='chart_section_wrapper'>
@@ -47,22 +46,22 @@ function Home() {
                     <div className='chart_icon_wrapper'>
                         <Card 
                             icon="calories-icon.png"
-                            value="290g"
+                            value={ userValues.calorieCount }
                             type="Calories"
                         />
                         <Card 
                             icon="protein-icon.png"
-                            value="290g"
+                            value={ userValues.proteinCount }
                             type="Protéines"
                         />
                         <Card 
                             icon="carbs-icon.png"
-                            value="290g"
+                            value={ userValues.carbohydrateCount }
                             type="Glucides"
                         />
                         <Card 
                             icon="fat-icon.png"
-                            value="290g"
+                            value={ userValues.lipidCount }
                             type="Lipides"
                         />
                     </div>

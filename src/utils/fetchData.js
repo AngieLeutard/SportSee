@@ -1,24 +1,33 @@
-export default async function fetchData(url) {
-    try {
-        const response = await fetch(url, {
-            method: 'GET', // méthode HTTP GET
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-                // Ajoutez d'autres en-têtes si nécessaire
-            }
-        });
+import { useState, useEffect } from "react";
 
-        // Vérifiez si la réponse est correcte
-        if (!response.ok) {
-            throw new Error(`Erreur HTTP ! statut: ${response.status}`);
-        }
+export const useFetch = (url) => {
 
-        // Analysez la réponse en JSON
-        const data = await response.json();
-        return data;
-    } catch (error) {
-        console.error('Erreur de récupération des données:', error);
-        throw error; // Relancez l'erreur pour la gestion des erreurs en amont
-    }
-}
+    const [data, setData] = useState(null);
+    const [isPending, setIsPending] = useState(false);
+    const [error, setError] = useState(null);
+
+  useEffect(() => {
+
+    const fetchData = async () => {
+
+      setIsPending(true);
+
+      try {
+        const response = await fetch(url);
+        if (!response.ok) throw new Error(response.statusText);
+        const json = await response.json();
+        setIsPending(false);
+        setData(json);
+        setError(null);
+      } catch (error) {
+        setError(`${error} Could not Fetch Data `);
+        setIsPending(false);
+      }
+
+    };
+
+    fetchData();
+
+  }, [url]);
+  return { data, isPending, error };
+};
