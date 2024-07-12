@@ -29,7 +29,10 @@
 }
 
 .chart_icon_wrapper {
-    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 7%;
     width: 21%;
     height: 613px;
 }
