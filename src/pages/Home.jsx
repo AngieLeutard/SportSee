@@ -5,8 +5,8 @@ import { useState } from "react";
 import { useFetch } from "../utils/fetchData.js";
 
 import LeftNavSection from '../containers/LeftNavSection.jsx';
-// import fetchData from '../utils/fetchData.js';
 import Card from '../components/Card.jsx';
+import ActivityChart from '../components/BarChart.jsx';
 
 function Home() {
 
@@ -23,9 +23,6 @@ function Home() {
         userData = data.data;
         userInfos = userData.userInfos;
         userValues = userData.keyData;
-        console.log(userData)
-        console.log(userInfos)
-        console.log(userValues)
     }
     
     return (
@@ -40,7 +37,9 @@ function Home() {
                 </section>
                 <section className='chart_section_wrapper'>
                     <div className='chart_wrapper'>
-                        <div className='main_chart'></div>
+                        <div className='main_chart'>
+                            <ActivityChart />
+                        </div>
                         <div className='other_chart'></div>
                     </div>
                     <div className='chart_icon_wrapper'>
