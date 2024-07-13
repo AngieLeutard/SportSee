@@ -43,3 +43,8 @@
 .red_word {
     color: red;
 }
+
+.other_chart {
+    display: flex;
+    flex-direction: row;
+}

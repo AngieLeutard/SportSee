@@ -7,6 +7,9 @@ import { useFetch } from "../utils/fetchData.js";
 import LeftNavSection from '../containers/LeftNavSection.jsx';
 import Card from '../components/Card.jsx';
 import ActivityChart from '../components/BarChart.jsx';
+import AverageChart from '../components/LineChart.jsx';
+import RadarChart from '../components/RadarChart.jsx';
+import RadialBarChart from '../components/RadialBarChart.jsx'
 
 function Home() {
 
@@ -40,7 +43,11 @@ function Home() {
                         <div className='main_chart'>
                             <ActivityChart />
                         </div>
-                        <div className='other_chart'></div>
+                        <div className='other_chart'>
+                            <AverageChart />
+                            <RadarChart />
+                            <RadialBarChart />
+                        </div>
                     </div>
                     <div className='chart_icon_wrapper'>
                         <Card 
