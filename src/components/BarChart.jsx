@@ -3,6 +3,8 @@ import { useParams } from 'react-router-dom';
 import { useState } from "react";
 import { useFetch } from "../utils/fetchData.js";
 
+import BarChartCustomToolType from "./BarcChartCustomToolType.jsx"
+
 function ActivityChart() {
 
     const { id } = useParams();
@@ -59,24 +61,14 @@ function ActivityChart() {
     }
     
     return (
-        <BarChart
-            width={835}
-            height={320}
-            data={chartData}
-            margin={{
-                top: 5,
-                right: 30,
-                left: 20,
-                bottom: 5,
-            }}
-        >
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="name" />
-            <YAxis />
-            <Tooltip shared={false} trigger="click" />
-            <Legend />
-            <Bar dataKey="poids" fill="#282D30" />
-            <Bar dataKey="calories" fill="#E60000" />
+        <BarChart width={763} height={273} data={chartData} barSize={7} barGap={8}>
+            <CartesianGrid strokeDasharray="3" vertical={false} />
+            <XAxis dataKey="name" tick={{ fill: '#9B9EAC' }} tickLine={false} stroke="#DEDEDE" strokeWidth={2} tickMargin={16}/>
+            <YAxis orientation="right" tickMargin={30} tick={{ fill: '#9B9EAC' }} tickLine={false} axisLine={false} tickCount={3}/>
+            <Tooltip content={<BarChartCustomToolType />} cursor={{ fill: 'rgba(196, 196, 196, 0.5)' }} />
+            <Legend verticalAlign="top" align="right" iconType="circle" iconSize="10" height={80}/>
+            <Bar dataKey="poids" fill="#282D30" radius={[20, 20, 0, 0]} maxBarSize={10}/>
+            <Bar className="bar" dataKey="calories" fill="#E60000" radius={[20, 20, 0, 0]} maxBarSize={10}/>
         </BarChart>
     );
 }

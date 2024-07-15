@@ -41,6 +41,7 @@ function Home() {
                 <section className='chart_section_wrapper'>
                     <div className='chart_wrapper'>
                         <div className='main_chart'>
+                            <p className="chartTitle">Activité quotidienne</p>
                             <ActivityChart />
                         </div>
                         <div className='other_chart'>
