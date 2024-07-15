@@ -60,14 +60,78 @@
 .other_chart {
     display: flex;
     flex-direction: row;
+    gap: 30px;
+    margin-top: 28px;
 }
 
-.chartTitle {
+.barChartTitle {
     position: absolute;
     left: 32px;
     top: 24px;
     color: #20253A;
-    font-family: Roboto;
+    font-family: "Roboto";
+    font-size: 15px;
+    font-weight: 500;
+    margin: 0;
+}
+
+.lineChart_wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    position: relative;
+    border-radius: 5px;
+    background: #F00;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.02);
+    min-width: 258px;
+    max-height: 253px;
+    padding-bottom: 10px;
+}
+
+.lineChartTitle {
+    position: absolute;
+    width: 147px;
+    top: 29px;
+    left: 24px;
+    color: #FFF;
+    font-family: "Roboto";
+    font-size: 15px;
+    font-weight: 500;
+    margin: 0;
+    opacity: 0.6;
+}
+
+.radarChart_wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    min-width: 258px;
+    max-height: 263px;
+    border-radius: 5px;
+    background: #282D30;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.02);
+}
+
+.goalChart_wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    min-width: 258px;
+    max-height: 263px;
+    border-radius: 5px;
+    background: #FBFBFB;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.02);
+}
+
+.goalChartTitle {
+    position: absolute;
+    left: 30px;
+    top: 24px;
+    color: #20253A;
+    font-family: "Roboto";
     font-size: 15px;
     font-weight: 500;
     margin: 0;

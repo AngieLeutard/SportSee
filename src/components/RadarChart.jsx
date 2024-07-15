@@ -22,44 +22,42 @@ function PerfChart() {
         console.log(userSessions)
         chartData = [
             {
-              name: "Cardio",
-              value: userSessions[0].value,
-            },
-            {
-              name: "Energie",
-              value: userSessions[1].value,
-            },
-            {
-              name: "Endurance",
-              value: userSessions[2].value,
-            },
-            {
-              name: "Force",
-              value: userSessions[3].value,
+              name: "Intensité",
+              value: userSessions[5].value,
             },
             {
               name: "Vitesse",
               value: userSessions[4].value,
             },
             {
-              name: "Intensité",
-              value: userSessions[5].value,
+              name: "Force",
+              value: userSessions[3].value,
+            },
+            {
+              name: "Endurance",
+              value: userSessions[2].value,
+            },
+            {
+              name: "Energie",
+              value: userSessions[1].value,
+            },
+            {
+              name: "Cardio",
+              value: userSessions[0].value,
             },
           ];
     }
     
     return (
         <RadarChart
-            cx={300}
-            cy={250}
-            outerRadius={150}
-            width={500}
-            height={500}
+            outerRadius={90}
             data={chartData}
+            width={248}
+            height={263}
         >
-            <PolarGrid />
-            <PolarAngleAxis dataKey="name" />
-            <PolarRadiusAxis />
+            <PolarGrid radialLines={false}/>
+            <PolarAngleAxis dataKey="name" fontFamily="Roboto" verticalAnchor="middle" tick={{ fill: "white", fontSize: 11 }}/>
+            <PolarRadiusAxis tickCount={6} tick={false} axisLine={false}/>
             <Radar
                 name="Mike"
                 dataKey="value"

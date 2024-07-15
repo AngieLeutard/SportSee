@@ -41,13 +41,21 @@ function Home() {
                 <section className='chart_section_wrapper'>
                     <div className='chart_wrapper'>
                         <div className='main_chart'>
-                            <p className="chartTitle">Activité quotidienne</p>
+                            <p className="barChartTitle">Activité quotidienne</p>
                             <ActivityChart />
                         </div>
                         <div className='other_chart'>
-                            <AverageChart />
-                            <RadarChart />
-                            <RadialBarChart />
+                            <div className='lineChart_wrapper'>
+                                <p className='lineChartTitle'>Durée moyenne des sessions</p>
+                                <AverageChart />
+                            </div>
+                            <div className='radarChart_wrapper'>
+                                <RadarChart />
+                            </div>
+                            <div className='goalChart_wrapper'>
+                                <p className='goalChartTitle'>Score</p>
+                                <RadialBarChart />
+                            </div>
                         </div>
                     </div>
                     <div className='chart_icon_wrapper'>
