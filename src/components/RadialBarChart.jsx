@@ -14,6 +14,9 @@ function ScoreChart() {
     let userData = "";
     let userSessions = [];
     let chartData = "";
+    let userValue = [];
+    let numb = 0;
+    let str = "";
 
     if(data) {
         console.log(data)
@@ -32,27 +35,32 @@ function ScoreChart() {
                 fill: "#FF0000"
             }
         ];
+        userValue = chartData[1];
+        numb = userValue.value;
+        str = numb.toString();
+        console.log(str)
     }
 
     return (
-        <PieChart width={200} height={200} > 
-            <text x={400} y={200} textAnchor="middle" dominantBaseline="middle">
-                Donut
-            </text>
-            <Pie
-                data={chartData}
-                cx={100}
-                cy={100}
-                innerRadius={70}
-                outerRadius={80}
-                fill="#FFF"
-                paddingAngle={5}
-                dataKey="value"
-                cornerRadius={100}
-            >
-                <Label value="de votre objectif" position="center" />
-            </Pie>
-        </PieChart>
+        <>
+            <span className="chartLabel">{ str }%</span>
+            <span className="chartText">de votre objectif</span>
+            <PieChart width={200} height={200} > 
+                <Pie
+                    data={chartData}
+                    cx={100}
+                    cy={100}
+                    innerRadius={70}
+                    outerRadius={80}
+                    fill="#FFFFF"
+                    paddingAngle={5}
+                    dataKey="value"
+                    cornerRadius={100}
+                >
+                </Pie>
+            </PieChart>
+        </>
+       
     );
 }
 

@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { useState } from "react";
 import { useFetch } from "../utils/fetchData.js";
 
-import BarChartCustomToolType from "./BarcChartCustomToolTip.jsx"
+import BarChartCustomToolType from "./BarChartCustomToolTip.jsx"
 
 function ActivityChart() {
 
