@@ -20,3 +20,14 @@
     align-items: center;
     justify-content: center;
 }
+
+@media (max-width: 1024px) {
+    .navIcon {
+        width: 35px;
+        height: 35px;
+    }
+
+    .leftNav {
+        margin: 5px;
+    }
+}

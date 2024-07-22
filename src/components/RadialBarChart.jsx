@@ -45,7 +45,7 @@ function ScoreChart() {
         <>
             <span className="chartLabel">{ str }%</span>
             <span className="chartText">de votre objectif</span>
-            <PieChart width={200} height={200} > 
+            <PieChart width={200} height={200}> 
                 <Pie
                     data={chartData}
                     cx={100}

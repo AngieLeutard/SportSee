@@ -1,5 +1,5 @@
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ReferenceLine, ReferenceDot, ReferenceArea } from "recharts";import { useParams } from 'react-router-dom';
-import { useState } from "react";
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip } from "recharts";
+import { useParams } from 'react-router-dom';
 import { useFetch } from "../utils/fetchData.js";
 
 import CustomToolTip from "./LineChartCustomToolTip.jsx";
@@ -8,18 +8,16 @@ function AverageChart() {
 
     const { id } = useParams();
 
-    const [url, setUrl] = useState(`http://localhost:3000/user/${id}/average-sessions`);
-    const { data, isPending, error } = useFetch(url);
+    const url = `http://localhost:3000/user/${id}/average-sessions`;
+    const { data } = useFetch(url);
 
     let userData = "";
     let userSessions = [];
     let chartData = [];
 
     if(data) {
-        console.log(data)
         userData = data.data;
         userSessions = userData.sessions;
-        console.log(userSessions)
         chartData = [
             {
               name: "L",

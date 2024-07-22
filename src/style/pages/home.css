@@ -102,6 +102,20 @@
     opacity: 0.6;
 }
 
+.lineChartTool {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 39px;
+    height: 25px;
+    background-color: #FFF;
+    color: #000;
+    text-align: center;
+    font-family: "Roboto";
+    font-size: 10px;
+    font-weight: 500;
+}
+
 .radarChart_wrapper {
     display: flex;
     flex-direction: column;
@@ -157,4 +171,27 @@
     left: 108px;
     width: 57px;
     text-align: center;
+}
+
+@media (max-width: 1024px) {
+    .right_section_wrapper {
+        margin-top: 45px;
+        margin-left: 5px;
+    }
+
+    .chart_icon_wrapper {
+        width: 15%;
+        height: 613px;
+    }
+
+    .chart_section_wrapper {
+        gap: 105px;
+    }
+
+    .main_chart {
+        width: 784px;
+    }
+    .other_chart {
+        gap: 5px;
+    }
 }
