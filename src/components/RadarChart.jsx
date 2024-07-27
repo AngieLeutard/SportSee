@@ -4,6 +4,8 @@ import { useParams } from 'react-router-dom';
 import { useState } from "react";
 import { useFetch } from "../utils/fetchData.js";
 
+import radarChartModel from "../data/radarChartData.js";
+
 function PerfChart() {
 
     const { id } = useParams();
@@ -11,41 +13,22 @@ function PerfChart() {
     const [url, setUrl] = useState(`http://localhost:3000/user/${id}/performance`);
     const { data, isPending, error } = useFetch(url);
 
-    let userData = "";
-    let userSessions = [];
+    
     let chartData = [];
 
     if(data) {
-        console.log(data)
-        userData = data.data;
-        userSessions = userData.data;
-        console.log(userSessions)
-        chartData = [
-            {
-              name: "Intensité",
-              value: userSessions[5].value,
-            },
-            {
-              name: "Vitesse",
-              value: userSessions[4].value,
-            },
-            {
-              name: "Force",
-              value: userSessions[3].value,
-            },
-            {
-              name: "Endurance",
-              value: userSessions[2].value,
-            },
-            {
-              name: "Energie",
-              value: userSessions[1].value,
-            },
-            {
-              name: "Cardio",
-              value: userSessions[0].value,
-            },
-          ];
+      console.log(data)
+      chartData = new radarChartModel(data.data.data).sessions;
+    }
+
+    const formatLabel = (value) => {
+      if (value === 1) return 'Intensité'
+      if (value === 2) return 'Vitesse'
+      if (value === 3) return 'Force'
+      if (value === 4) return 'Endurance'
+      if (value === 5) return 'Energie'
+      if (value === 6) return 'Cardio'
+      return value
     }
     
     return (
@@ -56,7 +39,7 @@ function PerfChart() {
             height={263}
         >
             <PolarGrid radialLines={false}/>
-            <PolarAngleAxis dataKey="name" fontFamily="Roboto" verticalAnchor="middle" tick={{ fill: "white", fontSize: 11 }}/>
+            <PolarAngleAxis dataKey="name" tickFormatter={formatLabel} fontFamily="Roboto" verticalAnchor="middle" tick={{ fill: "white", fontSize: 11 }}/>
             <PolarRadiusAxis tickCount={6} tick={false} axisLine={false}/>
             <Radar
                 name="Mike"

@@ -19,10 +19,10 @@ function ScoreChart() {
     let str = "";
 
     if(data) {
-        console.log(data)
+        // console.log(data)
         userData = data.data;
         userSessions = userData.score;
-        console.log(userSessions)
+        // console.log(userSessions)
         chartData = [
             {
                 name: "Score",
@@ -38,7 +38,7 @@ function ScoreChart() {
         userValue = chartData[1];
         numb = userValue.value;
         str = numb.toString();
-        console.log(str)
+        // console.log(str)
     }
 
     return (

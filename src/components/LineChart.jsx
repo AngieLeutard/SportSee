@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { useFetch } from "../utils/fetchData.js";
 
 import CustomToolTip from "./LineChartCustomToolTip.jsx";
+import lineChartModel from "../data/lineChartData.js";
 
 function AverageChart() {
 
@@ -11,43 +12,10 @@ function AverageChart() {
     const url = `http://localhost:3000/user/${id}/average-sessions`;
     const { data } = useFetch(url);
 
-    let userData = "";
-    let userSessions = [];
     let chartData = [];
 
     if(data) {
-        userData = data.data;
-        userSessions = userData.sessions;
-        chartData = [
-            {
-              name: "L",
-              length: userSessions[0].sessionLength,
-            },
-            {
-              name: "M",
-              length: userSessions[1].sessionLength,
-            },
-            {
-              name: "M",
-              length: userSessions[2].sessionLength,
-            },
-            {
-              name: "J",
-              length: userSessions[3].sessionLength,
-            },
-            {
-              name: "V",
-              length: userSessions[4].sessionLength,
-            },
-            {
-              name: "S",
-              length: userSessions[5].sessionLength,
-            },
-            {
-              name: "D",
-              length: userSessions[6].sessionLength,
-            },
-          ];
+      chartData = new lineChartModel(data.data.sessions).sessions;
     }
 
     const formatLabel = (value) => {
